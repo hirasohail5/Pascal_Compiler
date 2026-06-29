@@ -1,0 +1,322 @@
+Pascal Subset Mini Compiler  –  Modules 1 & 2
+Source file: test/bubble.pas
+
+══════════════════════════════════════════════════
+  TOKEN STREAM
+══════════════════════════════════════════════════
+Line  Col   Type            Lexeme              Attribute
+----------------------------------------------------------------------
+2     0     PROGRAM         program             program
+2     8     ID              bubble              bubble
+2     15    LPAREN          (                   (
+2     15    ID              input               input
+2     21    COMMA           ,                   ,
+2     22    ID              output              output
+2     29    RPAREN          )                   )
+2     30    SEMICOLON       ;                   ;
+3     0     VAR             var                 var
+5     4     ID              data                data
+5     10    COLON           :                   :
+5     11    ARRAY           array               array
+5     18    LBRACKET        [                   [
+5     18    NUM             1                   1
+5     20    DOTDOT          ..                  ..
+5     21    NUM             10                  10
+5     24    RBRACKET        ]                   ]
+5     25    OF              of                  of
+5     28    INTEGER         integer             integer
+5     36    SEMICOLON       ;                   ;
+6     4     ID              i                   i
+6     6     COMMA           ,                   ,
+6     7     ID              j                   j
+6     9     COMMA           ,                   ,
+6     10    ID              temp                temp
+6     15    COMMA           ,                   ,
+6     16    ID              n                   n
+6     19    COLON           :                   :
+6     20    INTEGER         integer             integer
+6     28    SEMICOLON       ;                   ;
+7     0     BEGIN           begin               begin
+9     4     ID              n                   n
+9     7     ASSIGNOP        :=                  :=
+9     9     NUM             10                  10
+9     12    SEMICOLON       ;                   ;
+10    4     ID              i                   i
+10    7     ASSIGNOP        :=                  :=
+10    9     NUM             1                   1
+10    11    SEMICOLON       ;                   ;
+11    4     WHILE           while               while
+11    10    ID              i                   i
+11    13    RELOP           <=                  <=
+11    15    ID              n                   n
+11    17    DO              do                  do
+13    4     BEGIN           begin               begin
+15    8     ID              read                read
+15    13    LPAREN          (                   (
+15    13    ID              data                data
+15    18    LBRACKET        [                   [
+15    18    ID              i                   i
+15    20    RBRACKET        ]                   ]
+15    21    RPAREN          )                   )
+15    22    SEMICOLON       ;                   ;
+16    8     ID              i                   i
+16    11    ASSIGNOP        :=                  :=
+16    13    ID              i                   i
+16    16    ADDOP           +                   +
+16    17    NUM             1                   1
+18    4     END             end                 end
+18    8     SEMICOLON       ;                   ;
+19    4     ID              i                   i
+19    7     ASSIGNOP        :=                  :=
+19    9     NUM             1                   1
+19    11    SEMICOLON       ;                   ;
+20    4     WHILE           while               while
+20    10    ID              i                   i
+20    13    RELOP           <=                  <=
+20    15    ID              n                   n
+20    18    ADDOP           -                   -
+20    19    NUM             1                   1
+20    21    DO              do                  do
+22    4     BEGIN           begin               begin
+24    8     ID              j                   j
+24    11    ASSIGNOP        :=                  :=
+24    13    NUM             1                   1
+24    15    SEMICOLON       ;                   ;
+25    8     WHILE           while               while
+25    14    ID              j                   j
+25    17    RELOP           <=                  <=
+25    19    ID              n                   n
+25    22    ADDOP           -                   -
+25    23    ID              i                   i
+25    25    DO              do                  do
+27    8     BEGIN           begin               begin
+29    12    IF              if                  if
+29    15    ID              data                data
+29    20    LBRACKET        [                   [
+29    20    ID              j                   j
+29    22    RBRACKET        ]                   ]
+29    24    RELOP           >                   >
+29    25    ID              data                data
+29    30    LBRACKET        [                   [
+29    30    ID              j                   j
+29    33    ADDOP           +                   +
+29    34    NUM             1                   1
+29    36    RBRACKET        ]                   ]
+29    37    THEN            then                then
+31    12    BEGIN           begin               begin
+33    16    ID              temp                temp
+33    22    ASSIGNOP        :=                  :=
+33    24    ID              data                data
+33    29    LBRACKET        [                   [
+33    29    ID              j                   j
+33    31    RBRACKET        ]                   ]
+33    32    SEMICOLON       ;                   ;
+34    16    ID              data                data
+34    21    LBRACKET        [                   [
+34    21    ID              j                   j
+34    23    RBRACKET        ]                   ]
+34    25    ASSIGNOP        :=                  :=
+34    27    ID              data                data
+34    32    LBRACKET        [                   [
+34    32    ID              j                   j
+34    35    ADDOP           +                   +
+34    36    NUM             1                   1
+34    38    RBRACKET        ]                   ]
+34    39    SEMICOLON       ;                   ;
+35    16    ID              data                data
+35    21    LBRACKET        [                   [
+35    21    ID              j                   j
+35    24    ADDOP           +                   +
+35    25    NUM             1                   1
+35    27    RBRACKET        ]                   ]
+35    29    ASSIGNOP        :=                  :=
+35    31    ID              temp                temp
+37    12    END             end                 end
+37    16    SEMICOLON       ;                   ;
+38    12    ID              j                   j
+38    15    ASSIGNOP        :=                  :=
+38    17    ID              j                   j
+38    20    ADDOP           +                   +
+38    21    NUM             1                   1
+40    8     END             end                 end
+40    12    SEMICOLON       ;                   ;
+41    8     ID              i                   i
+41    11    ASSIGNOP        :=                  :=
+41    13    ID              i                   i
+41    16    ADDOP           +                   +
+41    17    NUM             1                   1
+43    4     END             end                 end
+43    8     SEMICOLON       ;                   ;
+44    4     ID              i                   i
+44    7     ASSIGNOP        :=                  :=
+44    9     NUM             1                   1
+44    11    SEMICOLON       ;                   ;
+45    4     WHILE           while               while
+45    10    ID              i                   i
+45    13    RELOP           <=                  <=
+45    15    ID              n                   n
+45    17    DO              do                  do
+47    4     BEGIN           begin               begin
+49    8     ID              write               write
+49    14    LPAREN          (                   (
+49    14    ID              data                data
+49    19    LBRACKET        [                   [
+49    19    ID              i                   i
+49    21    RBRACKET        ]                   ]
+49    22    RPAREN          )                   )
+49    23    SEMICOLON       ;                   ;
+50    8     ID              i                   i
+50    11    ASSIGNOP        :=                  :=
+50    13    ID              i                   i
+50    16    ADDOP           +                   +
+50    17    NUM             1                   1
+52    4     END             end                 end
+54    0     END             end                 end
+54    4     DOT             .                   .
+56    0     EOF                                 
+----------------------------------------------------------------------
+Total tokens: 168
+
+══════════════════════════════════════════════════
+  DOUBLE-BUFFER STATISTICS
+══════════════════════════════════════════════════
+  Buffer size          : 4096 bytes
+  Total chars read     : 709
+  Buffer switches      : 0
+  Cumulative fill time : 0.003 ms
+  Total lexing time    : 3.304 ms
+══════════════════════════════════════════════════
+
+══════════════════════════════════════════════════
+  ABSTRACT SYNTAX TREE
+══════════════════════════════════════════════════
+Program  [bubble]  (line 2)
+  IdentifierList  (line 2)
+    Variable  [input]  (line 2)
+    Variable  [output]  (line 2)
+  Declarations  (line 3)
+    VarDecl  (line 5)
+      IdentifierList  (line 5)
+        Variable  [data]  (line 5)
+      ArrayType  [1..10]  (line 5)
+        StandardType  [integer]  (line 5)
+    VarDecl  (line 6)
+      IdentifierList  (line 6)
+        Variable  [i]  (line 6)
+        Variable  [j]  (line 6)
+        Variable  [temp]  (line 6)
+        Variable  [n]  (line 6)
+      StandardType  [integer]  (line 6)
+  SubprogramDecls  (line 7)
+  CompoundStmt  (line 7)
+    StatementList  (line 9)
+      AssignStmt  [:=]  (line 9)
+        Variable  [n]  (line 9)
+        NumberLiteral  [10]  (line 9)
+      AssignStmt  [:=]  (line 10)
+        Variable  [i]  (line 10)
+        NumberLiteral  [1]  (line 10)
+      WhileStmt  (line 11)
+        BinaryExpr  [<=]  (line 11)
+          Variable  [i]  (line 11)
+          Variable  [n]  (line 11)
+        CompoundStmt  (line 13)
+          StatementList  (line 15)
+            ProcedureCall  [read]  (line 15)
+              StatementList  (line 15)
+                ArrayAccess  [data]  (line 15)
+                  Variable  [i]  (line 15)
+            AssignStmt  [:=]  (line 16)
+              Variable  [i]  (line 16)
+              BinaryExpr  [+]  (line 16)
+                Variable  [i]  (line 16)
+                NumberLiteral  [1]  (line 16)
+      AssignStmt  [:=]  (line 19)
+        Variable  [i]  (line 19)
+        NumberLiteral  [1]  (line 19)
+      WhileStmt  (line 20)
+        BinaryExpr  [<=]  (line 20)
+          Variable  [i]  (line 20)
+          BinaryExpr  [-]  (line 20)
+            Variable  [n]  (line 20)
+            NumberLiteral  [1]  (line 20)
+        CompoundStmt  (line 22)
+          StatementList  (line 24)
+            AssignStmt  [:=]  (line 24)
+              Variable  [j]  (line 24)
+              NumberLiteral  [1]  (line 24)
+            WhileStmt  (line 25)
+              BinaryExpr  [<=]  (line 25)
+                Variable  [j]  (line 25)
+                BinaryExpr  [-]  (line 25)
+                  Variable  [n]  (line 25)
+                  Variable  [i]  (line 25)
+              CompoundStmt  (line 27)
+                StatementList  (line 29)
+                  IfStmt  (line 29)
+                    BinaryExpr  [>]  (line 29)
+                      ArrayAccess  [data]  (line 29)
+                        Variable  [j]  (line 29)
+                      ArrayAccess  [data]  (line 29)
+                        BinaryExpr  [+]  (line 29)
+                          Variable  [j]  (line 29)
+                          NumberLiteral  [1]  (line 29)
+                    CompoundStmt  (line 31)
+                      StatementList  (line 33)
+                        AssignStmt  [:=]  (line 33)
+                          Variable  [temp]  (line 33)
+                          ArrayAccess  [data]  (line 33)
+                            Variable  [j]  (line 33)
+                        AssignStmt  [:=]  (line 34)
+                          ArrayAccess  [data]  (line 34)
+                            Variable  [j]  (line 34)
+                          ArrayAccess  [data]  (line 34)
+                            BinaryExpr  [+]  (line 34)
+                              Variable  [j]  (line 34)
+                              NumberLiteral  [1]  (line 34)
+                        AssignStmt  [:=]  (line 35)
+                          ArrayAccess  [data]  (line 35)
+                            BinaryExpr  [+]  (line 35)
+                              Variable  [j]  (line 35)
+                              NumberLiteral  [1]  (line 35)
+                          Variable  [temp]  (line 35)
+                  AssignStmt  [:=]  (line 38)
+                    Variable  [j]  (line 38)
+                    BinaryExpr  [+]  (line 38)
+                      Variable  [j]  (line 38)
+                      NumberLiteral  [1]  (line 38)
+            AssignStmt  [:=]  (line 41)
+              Variable  [i]  (line 41)
+              BinaryExpr  [+]  (line 41)
+                Variable  [i]  (line 41)
+                NumberLiteral  [1]  (line 41)
+      AssignStmt  [:=]  (line 44)
+        Variable  [i]  (line 44)
+        NumberLiteral  [1]  (line 44)
+      WhileStmt  (line 45)
+        BinaryExpr  [<=]  (line 45)
+          Variable  [i]  (line 45)
+          Variable  [n]  (line 45)
+        CompoundStmt  (line 47)
+          StatementList  (line 49)
+            ProcedureCall  [write]  (line 49)
+              StatementList  (line 49)
+                ArrayAccess  [data]  (line 49)
+                  Variable  [i]  (line 49)
+            AssignStmt  [:=]  (line 50)
+              Variable  [i]  (line 50)
+              BinaryExpr  [+]  (line 50)
+                Variable  [i]  (line 50)
+                NumberLiteral  [1]  (line 50)
+
+══════════════════════════════════════════════════
+  SUMMARY
+══════════════════════════════════════════════════
+  Lexing time  : 3.304 ms
+  Parsing time : 0.039 ms
+  Lex errors   : 0
+  Parse errors : 0
+
+  Status: SUCCESS ✓
+══════════════════════════════════════════════════
+

@@ -1,0 +1,103 @@
+Pascal Subset Mini Compiler  –  Modules 1 & 2
+Source file: test/error_test.pas
+
+══════════════════════════════════════════════════
+  TOKEN STREAM
+══════════════════════════════════════════════════
+Line  Col   Type            Lexeme              Attribute
+----------------------------------------------------------------------
+2     0     PROGRAM         program             program
+2     8     ID              badprog             badprog
+2     16    LPAREN          (                   (
+2     16    ID              input               input
+2     22    COMMA           ,                   ,
+2     23    ID              output              output
+2     30    RPAREN          )                   )
+2     31    SEMICOLON       ;                   ;
+3     0     VAR             var                 var
+3     4     ID              x                   x
+3     7     COLON           :                   :
+3     8     INTEGER         integer             integer
+3     16    SEMICOLON       ;                   ;
+4     0     BEGIN           begin               begin
+6     4     ID              x                   x
+6     7     ASSIGNOP        :=                  :=
+6     10    SEMICOLON       ;                   ;
+7     4     IF              if                  if
+7     7     ID              x                   x
+7     10    RELOP           >                   >
+7     11    NUM             0                   0
+8     8     ID              write               write
+8     14    LPAREN          (                   (
+8     14    ID              x                   x
+8     16    RPAREN          )                   )
+9     4     WHILE           while               while
+9     10    ID              x                   x
+9     13    RELOP           <                   <
+9     14    NUM             10                  10
+9     17    DO              do                  do
+10    8     ID              x                   x
+10    11    ASSIGNOP        :=                  :=
+10    13    ID              x                   x
+10    16    ADDOP           +                   +
+10    17    NUM             1                   1
+12    0     END             end                 end
+12    4     DOT             .                   .
+14    0     EOF                                 
+----------------------------------------------------------------------
+Total tokens: 38
+
+══════════════════════════════════════════════════
+  DOUBLE-BUFFER STATISTICS
+══════════════════════════════════════════════════
+  Buffer size          : 4096 bytes
+  Total chars read     : 312
+  Buffer switches      : 0
+  Cumulative fill time : 0.004 ms
+  Total lexing time    : 0.055 ms
+══════════════════════════════════════════════════
+
+══════════════════════════════════════════════════
+  ABSTRACT SYNTAX TREE
+══════════════════════════════════════════════════
+Program  [badprog]  (line 2)
+  IdentifierList  (line 2)
+    Variable  [input]  (line 2)
+    Variable  [output]  (line 2)
+  Declarations  (line 3)
+    VarDecl  (line 3)
+      IdentifierList  (line 3)
+        Variable  [x]  (line 3)
+      StandardType  [integer]  (line 3)
+  SubprogramDecls  (line 4)
+  CompoundStmt  (line 4)
+    StatementList  (line 6)
+      AssignStmt  [:=]  (line 6)
+        Variable  [x]  (line 6)
+        Empty  (line 6)
+      IfStmt  (line 7)
+        BinaryExpr  [>]  (line 7)
+          Variable  [x]  (line 7)
+          NumberLiteral  [0]  (line 7)
+        ProcedureCall  [write]  (line 8)
+          StatementList  (line 8)
+            Variable  [x]  (line 8)
+
+[PARSER ERRORS]
+  Line 6, Col 10: Expected factor (id, number, '(' or 'not')
+  Line 8, Col 8: Expected 'then' but found 'write' at line 8, col 8
+  Line 9, Col 4: Expected 'end' but found 'while' at line 9, col 4
+  Line 9, Col 4: Expected '.' but found 'while' at line 9, col 4
+  Line 9, Col 4: Unexpected tokens after program end
+
+══════════════════════════════════════════════════
+  SUMMARY
+══════════════════════════════════════════════════
+  Lexing time  : 0.055 ms
+  Parsing time : 0.021 ms
+  Lex errors   : 0
+  Parse errors : 5
+
+  Status: FAILED  ✗
+══════════════════════════════════════════════════
+
